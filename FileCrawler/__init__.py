@@ -182,4 +182,5 @@ class RecursiveFileCrawler(BasicCrawler):
                 continue
             dir_item.sort(self._desc)
             result.append(dir_item)
+        result.sort(key=attrgetter("modify_date"), reverse=self._desc)
         return result
